@@ -1,16 +1,18 @@
 $(document).ready(function(){
-	function news() {
+	var interval = setInterval(function() {
 	
-		$("#news").html("<ul></ul>");
+		//$("#news").html("<ul></ul>");
 
 		  $.ajax({
 		    type: "GET",
 		    url: "http://www.lastampa.it/rss.xml",
 		    dataType: "xml",
 		    success: function(xml){
-		    $(xml).find('item').each(function(){
-		      var sTitle = $(this).find('title').text();
-		      $("<li></li>").html(sTitle).appendTo("#news ul");
+		    $(xml).find('item').each(function(index){
+		      var title = $(this).find('title').text();
+		      $("#news"+index).text(title);
+		      //$("<li></li>").html(index).appendTo("#news ul");
+
 		    });
 		  },
 		  error: function() {
@@ -18,6 +20,6 @@ $(document).ready(function(){
 		  }
 		  });
 
-	}
-	setTimeout(news, 1000);
+	},1000);
+	
 });
