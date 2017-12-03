@@ -1,0 +1,27 @@
+body {
+	background-color: black;
+	color: white;
+}
+
+h1 {
+	text-align: center;
+}
+
+.news{
+	color: white;
+	position: absolute;
+	top: 1000px;
+}
+
+#time{
+	color: white;
+	position: absolute;
+	top: 100px;
+}
+
+#weather{
+	color: white;
+	position: absolute;
+	left: 900px;
+	top: 100px;
+}
